@@ -9,22 +9,20 @@ public class gameOfDice {
         int score = 0;
         int x;
 
-        Random d = new Random();
+        Random rand = new Random();
         System.out.print("Welcome! Let's Play Roll Dice!");
 
         Scanner dice = new Scanner(System.in);
         String again = "yes";
 
         while (again.equalsIgnoreCase("yes")){
-            dice1 = (int) (Math.random()*6) + 1;
-            //1
-            dice2 = (int) (Math.random()*6) + 1;
-            //1
-            String word = dice.nextLine();
-            if (dice1 == 1 || dice2 == 1) {
-                score +=0;
-            }else if (dice1 == 1 && dice2 ==1){
+            dice1 = 1 + rand.nextInt(6);
+            dice2 = 1 + rand.nextInt(6);
+
+            if (dice1 == 1 && dice2 == 1) {
                 score +=25;
+            }else if (dice1 == 1 || dice2 ==1){
+                score +=0;
 
             }else{
                 score = dice1 + dice2;
@@ -35,7 +33,7 @@ public class gameOfDice {
                 System.out.println("Thank you for playing");
                 break;
             }
-            System.out.println("Your rolls " + dice1 + "&" + dice2);
+            System.out.println("Your rolls " + dice1 + " & " + dice2);
             System.out.println("Score: " + score);
             System.out.println("Roll again?");
             again = dice.next();
