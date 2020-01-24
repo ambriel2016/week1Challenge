@@ -20,12 +20,12 @@ public class gameOfDice {
             dice2 = 1 + rand.nextInt(6);
 
             if (dice1 == 1 && dice2 == 1) {
-                score +=25;
-            }else if (dice1 == 1 || dice2 ==1){
-                score +=0;
+                score += 25;
+            }else if (dice1 == 1 || dice2 == 1){
+                score += 0;
 
             }else{
-                score = dice1 + dice2;
+                score += dice1 + dice2;
             }
 
             if (score > 100){
